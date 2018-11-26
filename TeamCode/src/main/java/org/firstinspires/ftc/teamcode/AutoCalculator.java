@@ -25,7 +25,7 @@ public class AutoCalculator {
         if (Math.abs(driveLeft) > Math.abs(driveMiddle) && Math.abs(driveLeft) > Math.abs(driveRight)){
             driveRight = driveRight/ (1/Math.abs(driveLeft));
             driveMiddle = driveMiddle / (1/Math.abs(driveLeft));
-            driveLeft = driveLeft/ (1/Math.abs(driveLeft));
+            driveLeft = driveLeft/ (1/Math.abs(driveLeft)); //testing number
 
         } else if (Math.abs(driveRight)> Math.abs(driveMiddle) && Math.abs(driveRight) > Math.abs(driveLeft)){
             driveLeft = driveLeft / (1/Math.abs(driveRight));
