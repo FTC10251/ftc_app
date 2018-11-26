@@ -490,8 +490,6 @@ public class AutonomousWithVision extends LinearOpMode {
         tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABEL_GOLD_MINERAL, LABEL_SILVER_MINERAL);
     }
 
-
-
     public void encoderDriveAngle(double speed,//int leftDistance, int rightDistance,
                                   double inches, double timeoutS, double moveAngle) throws InterruptedException {
 
@@ -580,7 +578,6 @@ public class AutonomousWithVision extends LinearOpMode {
             //  sleep(250);   // optional pause after each move
         }
     }
-
 
 
     String formatAngle(AngleUnit angleUnit, double angle) {

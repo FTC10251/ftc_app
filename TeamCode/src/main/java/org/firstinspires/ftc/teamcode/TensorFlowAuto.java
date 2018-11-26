@@ -1,6 +1,9 @@
 package org.firstinspires.ftc.teamcode;
+
+
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -10,6 +13,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import java.util.List;
+
 import java.util.Locale;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
@@ -20,6 +24,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.Position;
 import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
+
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
@@ -49,13 +54,12 @@ public class TensorFlowAuto extends LinearOpMode {
     DcMotorEx rightMotor;
     DcMotorEx middleMotor;
     DcMotorEx middleMotor2;
+
     Orientation angles;
     BNO055IMU imu;
     String angleDouble = "hi";
 
     private ElapsedTime runtime = new ElapsedTime();// Use a Pushbot's hardware
-
-
 
     /*
      * IMPORTANT: You need to obtain your own license key to use Vuforia. The string below with which
@@ -85,6 +89,7 @@ public class TensorFlowAuto extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
 
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
@@ -96,6 +101,7 @@ public class TensorFlowAuto extends LinearOpMode {
         imu = hardwareMap.get(BNO055IMU.class, "imu");
         imu.initialize(parameters);
         imu.startAccelerationIntegration(new Position(), new Velocity(), 1000);
+
         // The TFObjectDetector uses the camera frames from the VuforiaLocalizer, so we create that
         // first.
         initVuforia();
@@ -199,6 +205,7 @@ public class TensorFlowAuto extends LinearOpMode {
             //tfod.shutdown();
         }
     }
+
 
     String formatAngle(AngleUnit angleUnit, double angle) {
         return formatDegrees(AngleUnit.DEGREES.fromUnit(angleUnit, angle));
@@ -307,9 +314,6 @@ public class TensorFlowAuto extends LinearOpMode {
     }
 
 
-
-
-
     public void encoderDriveAngle(double speed,//int leftDistance, int rightDistance,
                                   double inches, double timeoutS, double moveAngle) throws InterruptedException {
 
@@ -398,8 +402,6 @@ public class TensorFlowAuto extends LinearOpMode {
             //  sleep(250);   // optional pause after each move
         }
     }
-
-
 
 
 }
