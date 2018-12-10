@@ -36,9 +36,9 @@ public class RoverTeleOp  extends OpMode {
     Servo leftIntake;
     Servo rightIntake;
     Servo bouncer;
-    double bouncerPos = 0;
-    double bicep = 8;
-    double forearm = 8;
+    double bouncerPos = 0.0;
+    double bicep = 8.0;
+    double forearm = 8.0;
 
 
 
@@ -84,6 +84,7 @@ public class RoverTeleOp  extends OpMode {
         leftMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
         rightMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
         middleMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
+
     }
 
 
