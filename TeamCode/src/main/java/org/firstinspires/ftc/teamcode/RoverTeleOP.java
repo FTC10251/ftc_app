@@ -40,8 +40,6 @@ public class RoverTeleOp  extends OpMode {
     double bicep = 8.0;
     double forearm = 8.0;
 
-
-
     public void init(){
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
@@ -84,7 +82,6 @@ public class RoverTeleOp  extends OpMode {
         leftMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
         rightMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
         middleMotor.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidf);
-
     }
 
 
